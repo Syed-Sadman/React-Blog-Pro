@@ -1,11 +1,16 @@
+import Home from "./Home"
+import NavBar from "./NavBar"
 
 
 
 function App() {
-  const title='Welcome to a new blog'
+
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className="App">
+      <NavBar/>
+      <div className="content">
+      <Home/>  
+      </div>
     </div>
   );
 }
