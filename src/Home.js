@@ -3,6 +3,7 @@ import BlogList from './BlogList'
 
 function Home() {
     const [blogs,setBlogs]=useState(null)
+    const [isLoading,setLoading]=useState(true)
     
 
     useEffect(() => {
@@ -12,11 +13,13 @@ function Home() {
         })
         .then(data=>{
             setBlogs(data)
+            setLoading(false)
         })
     }, [])
 
     return (
         <div className="home">  
+            {isLoading && <div> Loading</div>}
             {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
             {/* <BlogList blogs={blogs.filter((blog)=>blog.author==='Mario')} title="Mario's Blogs"/> */}
         </div>
