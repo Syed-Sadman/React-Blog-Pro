@@ -7,6 +7,8 @@ const useFetch=(url)=>{
 
 
     useEffect(() => {
+
+        
         fetch(url)
         .then(res=>{
             if(!res.ok){
@@ -22,6 +24,8 @@ const useFetch=(url)=>{
         .catch(err=>{
             setError(err.message)})
             setLoading(true)
+        
+            
     }, [url])
     return {data,isLoading,error}
 }
