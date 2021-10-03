@@ -1,12 +1,11 @@
 import React from 'react'
 import  { Link } from 'react-router-dom'
-function BlogList(props) {      //another way is destructuring props like {blogs,title}
-    const blogs=props.blogs
-    const title=props.title
 
+
+const BlogList=({blogs})=>{
     return (
         <div className="blog-list">
-                <h2> {title}</h2>
+    
                 {blogs.map((blog)=>(
                     
                     <div className="blog-preview" key={blog.id}>

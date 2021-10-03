@@ -19,7 +19,7 @@ function App() {
             <Route path='/contact'>
               <Contact/>
             </Route>
-            <Route path='/blogs/:id'>
+            <Route path="/blogs/:id">
               <BlogDetails/>
             </Route>
           </Switch>
