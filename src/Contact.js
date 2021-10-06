@@ -5,11 +5,18 @@ import { useState } from "react/cjs/react.development";
 const Contact=()=>{
     const [title,setTitle]=useState('');
     const [body,setBody]=useState('');
-    const [author,setAuthor]=useState('mario');    
+    const [author,setAuthor]=useState('mario');
+    
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        const blog = { title, body, author};
+        console.log(blog);
+    }
+
     return(
         <div className="contact">
             <h1> Add new blogs</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Blog title : </label>
                 <input 
                 type="text"
@@ -33,8 +40,7 @@ const Contact=()=>{
                     <option value="yoshi">yoshi</option>
                 </select>
                 <button>Add Blog</button>
-                <p>{title} and {body}</p>
-                <p>{author}</p>
+               
             </form>
         </div>
     )
