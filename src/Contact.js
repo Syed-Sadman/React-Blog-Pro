@@ -1,13 +1,12 @@
 import { useState } from "react/cjs/react.development";
-
-
+import { useHistory } from "react-router-dom";
 
 const Contact=()=>{
     const [title,setTitle]=useState('');
     const [body,setBody]=useState('');
     const [author,setAuthor]=useState('mario');
     const [postPending,setPostPending]=useState(false);
-    
+    const history =useHistory();
     const handleSubmit=(e)=>{
         e.preventDefault();
         const blog = { title, body, author};
@@ -19,7 +18,9 @@ const Contact=()=>{
             body:JSON.stringify(blog)
         })
         .then(()=>{
-        setPostPending(false)
+        setPostPending(false);
+        history.push('/')
+
         })
         
     }
